@@ -1,0 +1,22 @@
+{
+  "name": "twitter-auto-adgagement",
+  "version": "1.0.0",
+  "description": "Twitter bot to automatically engage with tweets with certain keywords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gherrer1/Twitter-Auto-Adgagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gherrer1/Twitter-Auto-Adgagement/issues"
+  },
+  "homepage": "https://github.com/Gherrer1/Twitter-Auto-Adgagement#readme",
+  "dependencies": {
+    "twitter-js-client": "0.0.5"
+  }
+}
