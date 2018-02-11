@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Gherrer1/Twitter-Auto-Adgagement#readme",
   "dependencies": {
-    "twitter-js-client": "0.0.5"
+    "twit": "^2.2.9"
   }
 }
