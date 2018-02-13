@@ -6,10 +6,6 @@ console.log('heya');
 // defaults to trying to connect to the host that serves the page
 var socket = io();
 
-setTimeout(function() {
-  socket.emit('booya', 23);
-}, 3000);
-
 socket.on('tweet', function(data) {
   console.log(data);
 });
