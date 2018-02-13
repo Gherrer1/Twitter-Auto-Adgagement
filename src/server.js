@@ -10,8 +10,21 @@ app.get('/', function(req, res) {
 });
 
 io.on('connection', function(socket) {
+  // gives you a reference to the socket which is cool, this must be where we add listeners
   console.log('a user connected');
+
+  socket.on('booya', function(data) {
+    console.log(data);
+  });
+
+  socket.on('disconnect', function() {
+    console.log('a user disconnected');
+  });
 });
+
+setInterval(function() {
+  io.emit('tweet', { data: 'hey' });
+}, 1000);
 
 http.listen(3000, function() {
   console.log('Listening on *:3000');
