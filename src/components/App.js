@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Await new tweets</h2>
-        <div>{this.state.tweets.map(tweet => (<TweetLink key={tweet.id_str} text={tweet.text} />))}</div>
+        <div>{this.state.tweets.map(tweet => (<TweetLink key={tweet.id_str} {...tweet} />))}</div>
       </div>
     );
   }
