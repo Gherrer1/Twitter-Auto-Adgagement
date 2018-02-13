@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Gherrer1/Twitter-Auto-Adgagement#readme",
   "dependencies": {
+    "play-sound": "^1.1.2",
     "twit": "^2.2.9"
   },
   "devDependencies": {
