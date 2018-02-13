@@ -16,6 +16,7 @@ app.get('/', function(req, res) {
 // start stream
 const stream = T.stream('statuses/filter', { track: streamSearchQuery });
 stream.on('tweet', function emitTweet(tweet) {
+  console.log('new tweet incoming, emitting now');
   const [trimmedTweet] = trimTweets([tweet]);
   io.emit('tweet', { tweet: trimmedTweet });
 })
