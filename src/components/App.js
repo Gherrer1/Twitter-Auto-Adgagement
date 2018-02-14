@@ -18,6 +18,12 @@ class App extends React.Component {
         tweets: [tweet].concat(prev.tweets)
       }));
     });
+
+    fetch('/last/25')
+      .then(data => data.json())
+      .then(data => data.error ?
+        console.log(data.error) : this.setState(prev => ({ tweets: data.concat(prev.tweets) })))
+      .catch(err => console.log(err));
   }
 
   render() {

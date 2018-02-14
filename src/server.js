@@ -5,12 +5,24 @@ const io = require('socket.io')(http);
 const Twit = require('twit');
 const T = new Twit(require('./config'));
 const trimTweets = require('./trimTweets');
-const { streamSearchQuery, myTwitterHandle } = require('./adConfig');
+const fetchTweets = require('./fetchTweets');
+const { streamSearchQuery, myTwitterHandle, searchQuery } = require('./adConfig');
 
 app.use(express.static(require('path').resolve(__dirname, 'public')));
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/last/:id', function(req, res) {
+  const count = Number(req.params.id);
+  // if not number send error
+  if(!(typeof count === 'number' && isFinite(count) && count > 0)) {
+    return res.json({ error: '/last/:id requires that :id is a positive number' });
+  }
+  fetchTweets(searchQuery, count)
+    .then(tweets => res.json( tweets ))
+    .catch(err => res.json({ error: err.message }));
 });
 
 // start stream
